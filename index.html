@@ -8,8 +8,9 @@
 </head>
 <body>
   <header class="hero">
+    <button id="theme-toggle">🌙</button>
     <div class="hero-inner">
-      <p class="eyebrow">PhD Candidate · International Relations · China / BRI / South Asia</p>
+      <p class="eyebrow">PhD Candidate · International Relations · China Studies</p>
       <h1>Sanoop Sajan Koshy</h1>
       <p class="lead">
         Researching China’s Belt and Road Initiative, infrastructure finance, and Indo-Pacific political economy.
@@ -22,6 +23,15 @@
         <a href="#contact">Contact</a>
       </div>
     </div>
+    <script>
+  const toggle = document.getElementById("theme-toggle");
+
+  toggle.onclick = () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent =
+      document.body.classList.contains("dark") ? "☀️" : "🌙";
+  };
+</script>
   </header>
 
   <main class="container">
