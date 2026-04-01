@@ -1,109 +1,168 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanoop Sajan Koshy</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">PhD Candidate · International Relations · China / BRI / South Asia</p>
-      <h1>Sanoop Sajan Koshy</h1>
-      <p class="lead">
-        Researching China’s Belt and Road Initiative, infrastructure finance, and Indo-Pacific political economy.
-      </p>
-      <div class="hero-links">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="card" id="about">
-      <h2>About</h2>
-      <p>
-        I am a PhD candidate in International Relations at IIT Madras, with research interests in China studies,
-        BRI, Indo-Pacific strategy, South Asian political economy, and digital governance.
-      </p>
-    </section>
+<!-- THEME TOGGLE -->
 
-    <section class="grid two">
-      <div class="card" id="research">
-        <h2>Research Focus</h2>
-        <ul>
-          <li>China’s Belt and Road Initiative</li>
-          <li>Infrastructure finance and development diplomacy</li>
-          <li>South Asia and Indo-Pacific power dynamics</li>
-          <li>Digital Silk Road and technology politics</li>
-        </ul>
-      </div>
+<button id="theme-toggle">🌙</button>
 
-      <div class="card" id="highlights">
-        <h2>Academic Highlights</h2>
-        <ul>
-          <li>PhD Scholar, IIT Madras</li>
-          <li>Beijing Normal University scholarship holder</li>
-          <li>Research and editorial roles at Tsinghua-linked initiatives</li>
-          <li>Reviewer, journal editor, and conference presenter</li>
-        </ul>
-      </div>
-    </section>
+<!-- HERO -->
 
-    <section class="card" id="publications">
-      <h2>Publications</h2>
-      <div class="item">
-        <strong>The Politics of Network Governance: Digital Infrastructure Diplomacy in the Indo-Pacific</strong>
-        <span>— The Round Table, accepted (2026)</span>
-      </div>
-      <div class="item">
-        <strong>Connecting China, Latin America, and the Caribbean: Infrastructure and Everyday Life</strong>
-        <span>— Asian Studies Review, 2026</span>
-      </div>
-      <div class="item">
-        <strong>The Avoidable War</strong>
-        <span>— Journal of Asian Security and International Affairs, 2023</span>
-      </div>
-      <div class="item">
-        <strong>Rise of China in the New World Order: An Analysis on Digital Silk Road</strong>
-        <span>— Book chapter, 2023</span>
-      </div>
-    </section>
+<header class="hero">
+  <p class="tag">PhD Candidate · International Relations · China / BRI / South Asia</p>
 
-    <section class="grid two">
-      <div class="card" id="projects">
-        <h2>Project</h2>
-        <p><strong>The BRI Monitor</strong> is an AI-assisted research platform that integrates AidData records with curated policy documents and scholarly sources.</p>
-        <p>
-          <a class="button" href="https://the-bri-monitor.streamlit.app" target="_blank">Launch The BRI Monitor</a>
-        </p>
-      </div>
+  <h1>Sanoop Sajan Koshy</h1>
 
-      <div class="card" id="cv">
-        <h2>CV Snapshot</h2>
-        <ul>
-          <li>PhD, International Relations — IIT Madras</li>
-          <li>MPA — IGNOU</li>
-          <li>MA Political Science — University of Kerala</li>
-          <li>BA Political Science — St. Gregorios College</li>
-        </ul>
-      </div>
-    </section>
+  <p class="subtitle">
+    Researching China’s Belt and Road Initiative, infrastructure finance, and Indo-Pacific political economy.
+  </p>
 
-    <section class="card" id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:sanoopsajan@gmail.com">sanoopsajan@gmail.com</a></p>
-      <p>LinkedIn: add your profile link here</p>
-    </section>
-  </main>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <footer>
-    <p>© 2026 Sanoop Sajan Koshy</p>
-  </footer>
+<!-- MAIN CONTENT -->
+
+<main>
+
+  <!-- ABOUT -->
+
+  <section class="card" id="about">
+    <h2>About</h2>
+    <p>
+      I am a PhD candidate in International Relations at IIT Madras, focusing on China studies,
+      the Belt and Road Initiative (BRI), infrastructure finance, Indo-Pacific strategy,
+      South Asian political economy, and digital governance.
+    </p>
+  </section>
+
+  <!-- GRID -->
+
+  <section class="grid">
+
+```
+<div class="card" id="research">
+  <h2>Research Focus</h2>
+  <ul>
+    <li>China’s Belt and Road Initiative</li>
+    <li>Infrastructure finance and development diplomacy</li>
+    <li>South Asia and Indo-Pacific power dynamics</li>
+    <li>Digital Silk Road and technology politics</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Academic Highlights</h2>
+  <ul>
+    <li>PhD Scholar, IIT Madras</li>
+    <li>Beijing Normal University scholarship holder</li>
+    <li>Research roles at Tsinghua-linked initiatives</li>
+    <li>Reviewer and conference presenter</li>
+  </ul>
+</div>
+```
+
+  </section>
+
+  <!-- PUBLICATIONS -->
+
+  <section class="card" id="publications">
+    <h2>Publications</h2>
+
+```
+<div class="item">
+  <strong>The Politics of Network Governance: Digital Infrastructure Diplomacy in the Indo-Pacific</strong>
+  <span>The Round Table, accepted (2026)</span>
+</div>
+
+<div class="item">
+  <strong>Connecting China, Latin America, and the Caribbean</strong>
+  <span>Asian Studies Review (2026)</span>
+</div>
+
+<div class="item">
+  <strong>The Avoidable War</strong>
+  <span>Journal of Asian Security & International Affairs (2023)</span>
+</div>
+
+<div class="item">
+  <strong>Rise of China in the New World Order: Digital Silk Road</strong>
+  <span>Book Chapter (2023)</span>
+</div>
+```
+
+  </section>
+
+  <!-- PROJECT + EDUCATION -->
+
+  <section class="grid">
+
+```
+<div class="card" id="projects">
+  <h2>Project</h2>
+  <p>
+    <strong>The BRI Monitor</strong> — an AI-assisted research platform integrating AidData,
+    policy documents, and academic sources for evidence-based analysis of Chinese development finance.
+  </p>
+  <a class="btn" href="https://the-bri-monitor.streamlit.app" target="_blank">
+    Launch The BRI Monitor
+  </a>
+</div>
+
+<div class="card">
+  <h2>Education</h2>
+  <ul>
+    <li>PhD — International Relations, IIT Madras</li>
+    <li>MPA — IGNOU</li>
+    <li>MA Political Science — University of Kerala</li>
+    <li>BA Political Science</li>
+  </ul>
+</div>
+```
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Email: sanoopsajan@gmail.com</p>
+    <p>LinkedIn: (add your link)</p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 Sanoop Sajan Koshy</p>
+</footer>
+
+<!-- DARK MODE SCRIPT -->
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+
+  toggle.onclick = () => {
+    document.body.classList.toggle("dark");
+
+    toggle.textContent =
+      document.body.classList.contains("dark") ? "☀️" : "🌙";
+  };
+</script>
+
 </body>
 </html>
