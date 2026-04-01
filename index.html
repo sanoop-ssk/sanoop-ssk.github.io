@@ -5,23 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanoop Sajan Koshy</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Set theme on page load before content renders
-    (function() {
-      const savedTheme = localStorage.getItem('theme') || 'light-theme';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      document.body.classList.add(savedTheme);
-    })();
-  </script>
 </head>
-<body class="light-theme">
+<body>
   <header class="hero">
-    <button id="theme-toggle">🌙</button>
     <div class="hero-inner">
-      <p class="eyebrow">PhD Candidate · International Relations · China Studies</p>
+      <p class="eyebrow">PhD Candidate · International Relations · China / BRI / South Asia</p>
       <h1>Sanoop Sajan Koshy</h1>
       <p class="lead">
-        Researching China's Belt and Road Initiative, infrastructure finance, and Indo-Pacific political economy.
+        Researching China’s Belt and Road Initiative, infrastructure finance, and Indo-Pacific political economy.
       </p>
       <div class="hero-links">
         <a href="#research">Research</a>
@@ -46,7 +37,7 @@
       <div class="card" id="research">
         <h2>Research Focus</h2>
         <ul>
-          <li>China's Belt and Road Initiative</li>
+          <li>China’s Belt and Road Initiative</li>
           <li>Infrastructure finance and development diplomacy</li>
           <li>South Asia and Indo-Pacific power dynamics</li>
           <li>Digital Silk Road and technology politics</li>
@@ -114,32 +105,5 @@
   <footer>
     <p>© 2026 Sanoop Sajan Koshy</p>
   </footer>
-
-  <script>
-    // Theme toggle functionality with localStorage persistence
-    const toggle = document.getElementById("theme-toggle");
-    const body = document.body;
-
-    // Initialize theme button text
-    const currentTheme = localStorage.getItem('theme') || 'light-theme';
-    toggle.textContent = currentTheme === 'dark-theme' ? '☀️' : '🌙';
-
-    // Toggle theme on button click
-    toggle.onclick = () => {
-      const isDarkTheme = body.classList.contains('dark-theme');
-      
-      if (isDarkTheme) {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
-        toggle.textContent = '🌙';
-        localStorage.setItem('theme', 'light-theme');
-      } else {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
-        toggle.textContent = '☀️';
-        localStorage.setItem('theme', 'dark-theme');
-      }
-    };
-  </script>
 </body>
 </html>
