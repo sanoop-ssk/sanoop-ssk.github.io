@@ -1,353 +1,101 @@
-/* ==========================================================================
-   CSS Variables & Theme Setup (Chocolate Truffle Palette)
-   ========================================================================== */
+/* Color Palette & Themes */
 :root {
-    /* LIGHT THEME (Default) */
-    --bg-primary: #FDFBD4;     /* Cream */
-    --bg-secondary: #F5F3CC;   /* Slightly darker cream for alternate sections */
-    --text-main: #38240D;      /* Very dark brown */
-    --text-muted: #713600;     /* Dark brown */
-    --accent: #C05800;         /* Caramel */
-    --border-color: #713600;   
-    --nav-bg: rgba(253, 251, 212, 0.95);
+    --bg-gradient: linear-gradient(135deg, #FDFBD4 0%, #F5F3CC 100%);
+    --card-bg: #FFFFFF;
+    --text-main: #38240D;
+    --text-muted: #713600;
+    --accent: #C05800;
+    --nav-bg: rgba(253, 251, 212, 0.8);
+    --shadow: 0 8px 30px rgba(113, 54, 0, 0.08);
 }
 
 [data-theme="dark"] {
-    /* DARK THEME */
-    --bg-primary: #38240D;     /* Very dark brown */
-    --bg-secondary: #2A1A08;   /* Even darker brown for depth */
-    --text-main: #FDFBD4;      /* Cream */
-    --text-muted: #F5F3CC;     /* Slightly muted cream */
-    --accent: #C05800;         /* Caramel */
-    --border-color: #713600;
-    --nav-bg: rgba(56, 36, 13, 0.95);
+    --bg-gradient: linear-gradient(135deg, #2A1A08 0%, #1A1005 100%);
+    --card-bg: #38240D;
+    --text-main: #FDFBD4;
+    --text-muted: #F5F3CC;
+    --accent: #C05800;
+    --nav-bg: rgba(42, 26, 8, 0.8);
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ==========================================================================
-   Base Styles & Typography
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Base Settings */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Lora', serif;
-    background-color: var(--bg-primary);
+    background: var(--bg-gradient);
     color: var(--text-main);
-    line-height: 1.7;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.8;
+    min-height: 100vh;
+    transition: background 0.4s ease, color 0.4s ease;
 }
+h1, h2, h3, h4, h5, .nav-links { font-family: 'Inter', sans-serif; }
+a { color: var(--accent); text-decoration: none; }
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: var(--text-main);
-}
-
-a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
+/* Fixed Navigation Bar */
 header {
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 0; width: 100%;
     background-color: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(113, 54, 0, 0.1);
+    backdrop-filter: blur(10px); /* Creates a modern frosted glass effect */
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-
 nav {
-    display: flex;
+    display: flex; /* This forces items into a horizontal row */
     justify-content: space-between;
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
     padding: 1.2rem 2rem;
-    font-family: 'Inter', sans-serif;
 }
-
-.logo {
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
-
 .nav-links {
-    display: flex;
-    list-style: none;
+    display: flex; /* Forces the list items into a row */
+    list-style: none; /* Removes the bullet points */
     gap: 2rem;
 }
+.nav-links a { color: var(--text-main); font-weight: 500; }
+.nav-links a:hover { color: var(--accent); }
 
-.nav-links a {
-    color: var(--text-main);
-    font-size: 0.9rem;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
+/* Dark Mode Button Fix */
 #theme-toggle {
-    background: none;
-    border: none;
-    color: var(--text-main);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s ease;
+    background: none; border: none; cursor: pointer; color: var(--text-main);
+}
+#theme-toggle svg {
+    pointer-events: none; /* Crucial fix: prevents the icon from stealing the click */
 }
 
-#theme-toggle:hover {
-    color: var(--accent);
-}
-
-/* ==========================================================================
-   Layout Containers & Sections
-   ========================================================================== */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 6rem 2rem 4rem 2rem;
-}
-
-.bg-alt {
-    background-color: var(--bg-secondary);
-}
-
-.section-title {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* ==========================================================================
-   Hero Section
-   ========================================================================== */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
+/* Modern Layout Elements */
+.page-container {
+    max-width: 900px;
+    margin: 8rem auto 4rem auto; /* Pushes content down below the sticky nav */
     padding: 0 2rem;
 }
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+.hero-center {
+    text-align: center;
+    margin-top: 15vh;
 }
+.hero-center h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+.hero-center h2 { font-size: 1.5rem; font-weight: 400; color: var(--text-muted); }
+.tagline { color: var(--accent); letter-spacing: 1px; margin-top: 1rem; }
 
-.hero h2 {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-    font-family: 'Lora', serif;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-}
-
-.hero .tagline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent);
+/* Modern Card Design */
+.card {
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow); /* Soft modern shadow */
     margin-bottom: 2rem;
-}
-
-.hero-desc {
-    font-size: 1.1rem;
-    max-width: 650px;
-    margin-bottom: 2.5rem;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1.5rem;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    border-radius: 6px;
+    margin: 1rem 0.5rem;
+    border: 2px solid var(--accent);
 }
-
-.btn-primary {
-    background-color: var(--text-main);
-    color: var(--bg-primary);
-    border: 1px solid var(--text-main);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--text-main);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-}
-
-.btn-secondary:hover {
-    background-color: var(--text-muted);
-    color: var(--bg-primary);
-    border-color: var(--text-muted);
-}
-
-/* ==========================================================================
-   Components
-   ========================================================================== */
-/* About */
-.about-content p {
-    margin-bottom: 1.5rem;
-}
-
-/* Research Grid */
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    list-style: none;
-}
-
-.research-grid li {
-    padding: 1.5rem;
-    background-color: var(--bg-primary);
-    border-left: 3px solid var(--accent);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-}
-
-/* Project Card (BRI DataLab) */
-.project-card {
-    border: 1px solid var(--border-color);
-    padding: 2.5rem;
-    border-radius: 4px;
-    background-color: var(--bg-secondary);
-}
-
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.project-header h4 {
-    font-size: 1.4rem;
-}
-
-.project-badge {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    background-color: var(--accent);
-    color: #FDFBD4; /* Always cream for contrast */
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.project-desc {
-    margin-bottom: 1.5rem;
-}
-
-.project-link {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-/* Publications */
-.pub-category {
-    margin-bottom: 2.5rem;
-}
-
-.pub-category h4 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: var(--text-muted);
-}
-
-.pub-list {
-    list-style: none;
-}
-
-.pub-list li {
-    margin-bottom: 1.2rem;
-    padding-left: 1.5rem;
-    text-indent: -1.5rem; /* Hanging indent for APA/Chicago feel */
-}
-
-/* Footer */
-footer {
-    background-color: var(--text-main);
-    color: var(--bg-primary);
-    text-align: center;
-    padding: 4rem 2rem;
-    font-family: 'Inter', sans-serif;
-}
-
-.footer-content h4 {
-    color: var(--bg-primary);
-    margin-bottom: 1rem;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-}
-
-.contact-links a {
-    color: var(--bg-secondary);
-}
-
-.contact-links a:hover {
-    color: var(--accent);
-}
-
-.copyright {
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-/* ==========================================================================
-   Responsive Design
-   ========================================================================== */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero h2 { font-size: 1.2rem; }
-    .nav-links { display: none; /* Hide standard nav on small mobile */ }
-    nav { justify-content: space-between; }
-    .project-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-}
+.btn-primary { background-color: var(--accent); color: #fff; }
+.btn-secondary { background-color: transparent; color: var(--text-main); }
